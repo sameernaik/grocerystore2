@@ -1,0 +1,2 @@
+REPORT_FOLDER='reports'
+GRAPH_FOLDER=REPORT_FOLDER+'/graphs'

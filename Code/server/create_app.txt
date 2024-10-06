@@ -1,0 +1,11 @@
+from flask import Flask
+
+
+def create_app():
+    app = Flask(__name__)
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///grocerystore.database.sqlite3"
+    app.config["CELERY_RESULT_BACKEND"] = "redis://localhost:6379/0"
+    app.config["CELERY_BROKER_URL"] = "redis://localhost:6379/0"
+    # Other configurations...
+
+    return app

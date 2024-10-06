@@ -1,0 +1,13 @@
+-- database: /Users/nasameer/Documents/Personal/IITMadrasDS/MAD1/project/workspace/GroceryStore/Code/instance/grocerystore.database.sqlite3
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+SELECT sum(quantity),count(*),product_id FROM "purchase_order_item" ,"purchase_order" where purchase_order.status=1 and purchase_order.id=purchase_order_item.order_id group by product_id;
+select * from purchase_order;
+select * from purchase_order_item;
+--127 143 1
+--57 88 2
+--55 86 3
+--24 84 4
+select id from purchase_order where status=2;
+select product_id,sum(quantity) from purchase_order_item where order_id in (select id from purchase_order where status=2) group by product_id;

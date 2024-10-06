@@ -1,0 +1,11 @@
+src/
+|-- components/
+|   |-- Product/
+|       |-- ProductList.vue
+|       |-- ProductDetail.vue
+|       |-- ProductForm.vue
+|       |-- ProductCategory.vue
+|       |-- ProductListSection.vue
+|       |-- ProductListItem.vue
+|       |-- ProductListHeader.vue
+|       |-- ProductListFooter.vue

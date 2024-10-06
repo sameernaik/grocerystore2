@@ -1,0 +1,179 @@
+openapi: 3.0.0
+info:
+  title: Online Grocery Store
+  description:  Online Grocery Store
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:5000/
+paths:
+  /api/category/{id}:
+    description: End point to read, update and delete a category resource with id = categoryId.
+    get:
+      description: Operation to Read category resource.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 201
+      responses:
+        '200':
+          description: Request Successful
+          content:
+            application/json:
+              schema:
+                title: category object
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: Vegetables
+                  owner:
+                    type: integer
+                    example: 1
+                  created_at:
+                    type: string
+                    example: 2023-08-07 18:06:02.468941
+                  modified_at:
+                    type: string
+                    example: 2023-08-07 18:06:02.468941
+        '500':
+          description: Internal Server Error
+        '404':
+          description: category not found
+
+    put:
+      description: Operation to update the category resource.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 7
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Milk
+                owner:
+                  type: string
+                  example: 1
+      responses:
+        '200':
+          description: Successfully updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 7
+                  name:
+                    type: string
+                    example: Milk
+                  owner:
+                    type: integer
+                    example: 1
+                  created_at:
+                    type: string
+                    example: 2023-08-07 18:06:02.468941
+                  modified_at:
+                    type: string
+                    example: 2023-08-07 18:06:02.468941
+        '404':
+          description: category not found
+        '500':
+          description: Internal Server Error
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+    delete:
+      description: Operation to delete the category resource
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 10
+      responses:
+        '200':
+          description: Successfully Deleted
+        '404':
+          description: category not found
+        '500':
+          description: Intenal Server Error
+
+  /api/category:
+    description: End point to create category resource
+    post:
+      description: Operation to create the category resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                  name:
+                    type: string
+                    example: Choclate
+                  owner:
+                    type: integer
+                    example: 1
+                
+      responses:
+        '201':
+          description: Successfully Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 10
+                  name:
+                    type: string
+                    example: Choclate
+                  owner:
+                    type: integer
+                    example: 1
+                  created_at:
+                    type: string
+                    example: 2023-08-12 16:17:27.606248
+                  modified_at:
+                    type: string
+                    example: 2023-08-12 16:17:27.606254
+        '409':
+          description: category_code already exist
+        '500':
+          description: Internal Server Error
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string

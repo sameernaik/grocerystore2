@@ -1,0 +1,14 @@
+5321:C 17 Dec 2023 02:43:34.448 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+5321:C 17 Dec 2023 02:43:34.448 * Redis version=7.2.3, bits=64, commit=00000000, modified=0, pid=5321, just started
+5321:C 17 Dec 2023 02:43:34.448 * Configuration loaded
+5321:M 17 Dec 2023 02:43:34.450 * Increased maximum number of open files to 10032 (it was originally set to 8192).
+5321:M 17 Dec 2023 02:43:34.450 * monotonic clock: POSIX clock_gettime
+5321:M 17 Dec 2023 02:43:34.450 * Running mode=standalone, port=6379.
+5321:M 17 Dec 2023 02:43:34.451 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+5321:M 17 Dec 2023 02:43:34.451 # Warning: Could not create server TCP listening socket *:6379: bind: Address already in use
+5321:M 17 Dec 2023 02:43:34.451 # Failed listening on port 6379 (tcp), aborting.
+28496:M 17 Dec 2023 03:36:26.068 * 1 changes in 3600 seconds. Saving...
+28496:M 17 Dec 2023 03:36:26.071 * Background saving started by pid 8227
+8227:C 17 Dec 2023 03:36:26.096 * DB saved on disk
+8227:C 17 Dec 2023 03:36:26.099 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+28496:M 17 Dec 2023 03:36:26.172 * Background saving terminated with success

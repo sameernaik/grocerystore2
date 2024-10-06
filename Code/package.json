@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "toastie": "^0.0.1",
+    "vue-toastification": "^1.7.14"
+  }
+}
